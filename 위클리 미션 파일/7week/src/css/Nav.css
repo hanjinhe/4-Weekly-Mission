@@ -1,0 +1,70 @@
+@import "./global.css";
+
+nav {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #edf7ff;
+  z-index: 1;
+}
+.sticky-nav {
+  top: -10rem;
+}
+.gnb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6.3rem;
+}
+.logo {
+  width: 13.3rem;
+  height: 2.4rem;
+}
+.login {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.loginImg {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 4.8rem;
+}
+.emailname {
+  font-size: 1.4rem;
+  font-weight: 400;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+.loginBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12.8rem;
+  height: 5.3rem;
+  background-image: linear-gradient(135deg, var(--primary) 2%, #6ae3fe 100%);
+  border-radius: 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--background);
+}
+@media (min-width: 375px) {
+  .gnb {
+    width: 34rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .gnb {
+    width: 70rem;
+  }
+}
+
+@media (min-width: 1128px) {
+  .gnb {
+    width: 106rem;
+  }
+}
