@@ -1,0 +1,43 @@
+.sharemodal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 3.2rem;
+}
+.sharebutton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+}
+.imgbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 3.8rem;
+}
+.imgbox.kakao {
+  background-color: #fee500;
+}
+.imgbox.facebook {
+  background-color: #1877f2;
+}
+.imgbox.link {
+  background-color: rgba(157, 157, 157, 0.04);
+}
+.kakaoimg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.facebookimg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+.linkimg {
+  width: 1.8rem;
+  height: 1.8rem;
+}

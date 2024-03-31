@@ -1,0 +1,7 @@
+@import "./global.css";
+
+.title {
+  color: var(--gray100);
+  font-size: 2rem;
+  font-weight: 700;
+}

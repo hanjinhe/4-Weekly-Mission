@@ -1,0 +1,36 @@
+.folderitembutton {
+  flex: 0 0 4rem;
+  display: flex;
+  align-items: center;
+  column-gap: 0.8rem;
+  width: 100%;
+  height: 4rem;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+
+  &:hover {
+    background-color: #f0f6ff;
+  }
+
+  .folderitembutton.isSelected {
+    background-color: #f0f6ff;
+  }
+}
+
+.folderitemname {
+  font-size: 1.6rem;
+  color: var(--gray100);
+
+  &.isSelected {
+    color: var(--primary);
+  }
+}
+
+.folderitemcount {
+  font-size: 1.4rem;
+  color: var(--gray60);
+}
+
+.folderitemcheck {
+  margin-left: auto;
+}

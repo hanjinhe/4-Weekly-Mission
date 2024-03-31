@@ -1,0 +1,27 @@
+@import "./global.css";
+
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: none;
+  z-index: 1;
+
+  &.backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}

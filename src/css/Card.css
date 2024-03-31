@@ -6,12 +6,12 @@
 }
 
 .info-img {
-  overflow: hidden;
   border-bottom-left-radius: 0rem;
   border-bottom-right-radius: 0rem;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
   position: relative;
+  overflow: hidden;
 }
 
 .cardItem-img {
@@ -77,4 +77,28 @@
   top: 1.5rem;
   right: 2rem;
   z-index: 1;
+}
+
+.kebabpop {
+  display: none;
+}
+.kebabpop.show {
+  display: flex;
+  position: absolute;
+  top: 3rem;
+  right: -5rem;
+  background-color: var(--white);
+  flex-direction: column;
+  z-index: 1;
+  box-shadow: 0px 2px 8px 0px rgba(51, 50, 54, 0.1);
+}
+.kebabpop > button {
+  padding: 0.7rem 1.2rem;
+}
+.kebabpop > button:hover {
+  background-color: var(--background);
+  color: var(--primary);
+}
+.kebabpop.show:focus-out {
+  display: none;
 }

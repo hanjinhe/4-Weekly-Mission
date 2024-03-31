@@ -46,6 +46,10 @@ section {
   font-size: 1.6rem;
   font-weight: 400;
 }
+.title-tool {
+  display: flex;
+  justify-content: center;
+}
 .title-tools {
   margin-top: 2.4rem;
   display: flex;
