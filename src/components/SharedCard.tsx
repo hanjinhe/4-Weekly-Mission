@@ -47,6 +47,7 @@ function SharedCard() {
                 userFolder={{
                   data: [],
                 }}
+                links={undefined}
               />
             </li>
           ))}

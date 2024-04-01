@@ -1,40 +1,28 @@
-import { useEffect, useState } from "react";
-import { getLinksUserIdLinks } from "../api";
 import "../css/Article.css";
 import { Card } from "./Card";
+interface Link {
+  title: string;
+  url: string;
+  description: string;
+}
 
 interface LinkItemProps {
   folderId: string;
-  folderName?: string;
   userFolder: any;
+  links: { data: Link[] };
 }
-function LinkItem({ folderId, folderName, userFolder }: LinkItemProps) {
-  const [links, setLinks] = useState({ data: [] });
-
-  useEffect(() => {
-    const fetchLinks = async () => {
-      try {
-        const linksData = await getLinksUserIdLinks(folderId);
-        setLinks(linksData);
-      } catch (error) {
-        console.error("Error fetching links:", error);
-      }
-    };
-
-    fetchLinks();
-  }, [folderId]);
-
+function LinkItem({ folderId, userFolder, links }: LinkItemProps) {
   return (
     <article>
-      {links.data.length > 0 ? (
+      {links?.data?.length > 0 ? (
         <ul className="article-list">
-          {links.data.map((item: any) => (
+          {links?.data.map((item: any) => (
             <li className="article-item" key={item.id}>
               <Card
                 userFolder={userFolder}
                 folderId={folderId}
-                fodername={folderName}
                 item={item}
+                links={links}
               />
             </li>
           ))}

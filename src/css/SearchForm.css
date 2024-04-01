@@ -1,37 +1,55 @@
 @import "./global.css";
-form {
+.formcontainer {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .search {
   display: flex;
-  justify-content: center;
-  padding: 1.5rem 1.6rem;
+  max-width: 106rem;
+  height: 4.3rem;
+  padding-left: 3.8rem;
+  padding-right: 1.6rem;
   margin-top: 4rem;
+  background-image: url("../image/Search.png");
+  background-repeat: no-repeat;
+  background-position: 1rem;
   background-color: var(--background);
   border: none;
   border-radius: 1rem;
-  background-image: url("../image/Search.png");
-  background-size: 1.6rem;
-  background-repeat: no-repeat;
-  position: relative;
-  padding-left: 4.5rem;
-  background-position: 1.5rem;
+  font-size: 1.4rem;
+}
+.input::placeholder {
+  color: var(--gray100);
 }
 @media (min-width: 375px) {
   .search {
     width: 34rem;
   }
 }
-
 @media (min-width: 768px) {
   .search {
     width: 70rem;
   }
 }
-
 @media (min-width: 1128px) {
   .search {
-    width: 106rem;
+    width: 100%;
   }
+}
+.textcontainer {
+  margin-top: 4rem;
+  width: 106rem;
+  display: flex;
+}
+.textcontainer h3 {
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: var(--gray100);
+}
+.textcontainer span {
+  color: var(--gray60);
 }

@@ -38,7 +38,7 @@ function LinkAddForm({
   };
 
   return (
-    <form>
+    <form className="linkaddform">
       <input
         className="linkadd"
         type="search"

@@ -24,10 +24,10 @@ interface Item {
 interface CardProps {
   item: Item;
   folderId: string;
-  fodername?: string;
   userFolder: { data: { id: number; name: string; link: { count: number } }[] };
+  links: any;
 }
-export function Card({ item, folderId, fodername, userFolder }: CardProps) {
+export function Card({ item, folderId, userFolder, links }: CardProps) {
   const [kebabPopUp, setKebabPopUp] = useState<boolean>(false);
   const [currentModal, setCurrentModal] = useState<string | null>(null);
   const [selectedFolderId, setSelectedFolderId] = useState<number | null>(

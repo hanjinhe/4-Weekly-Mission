@@ -1,5 +1,5 @@
 @import "./global.css";
-form {
+.linkaddform {
   display: flex;
   justify-content: center;
   position: relative;

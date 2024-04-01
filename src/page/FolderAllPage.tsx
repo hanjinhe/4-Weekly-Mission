@@ -4,17 +4,14 @@ import Header from "../components/Header";
 import FolderList from "../components/FolderList";
 import LinkItem from "../components/LinkItem";
 import { getLinksUserIdFolder } from "../api";
-
+import { useSearchLink } from "../components/useSearchLink";
+import { getLinksUserIdLinks } from "../api";
 const FolderAllPage = () => {
   const [selectedFolderId, setSelectedFolderId] = useState<string>("");
   const [selectedFolderName, setSelectedFolderName] = useState<string>("전체");
   const [selectedTool, setSelectedTool] = useState<React.ReactNode>(null);
   const [userFolder, setUserFolder] = useState<{ data: any[] }>({ data: [] });
-
-  const handleItemClick = (folderName: string, folderId: string) => {
-    setSelectedFolderId(folderId);
-    setSelectedFolderName(folderName);
-  };
+  const [links, setLinks] = useState<any[]>([]);
 
   useEffect(() => {
     const fetchUserFolder = async () => {
@@ -28,6 +25,27 @@ const FolderAllPage = () => {
     fetchUserFolder();
   }, []);
 
+  useEffect(() => {
+    const fetchLinks = async () => {
+      try {
+        const linksData = await getLinksUserIdLinks(selectedFolderId);
+        setLinks(linksData.data);
+      } catch (error) {
+        console.error("Error fetching links:", error);
+      }
+    };
+
+    fetchLinks();
+  }, [selectedFolderId]);
+
+  const { searchValue, handleChange, handleCloseClick, result } =
+    useSearchLink(links);
+
+  const handleItemClick = (folderName: string, folderId: string) => {
+    setSelectedFolderId(folderId);
+    setSelectedFolderName(folderName);
+  };
+
   return (
     <>
       <Header
@@ -36,7 +54,11 @@ const FolderAllPage = () => {
         setFolderId={setSelectedFolderId}
         folderName={selectedFolderName}
       />
-      <SearchForm />
+      <SearchForm
+        value={searchValue}
+        onChange={handleChange}
+        onCloseClick={handleCloseClick}
+      />
       <FolderList
         userFolder={userFolder}
         folderId={selectedFolderId}
@@ -47,7 +69,7 @@ const FolderAllPage = () => {
       <LinkItem
         userFolder={userFolder}
         folderId={selectedFolderId}
-        folderName={selectedFolderName}
+        links={result}
       />
       {selectedTool && selectedTool}
     </>
